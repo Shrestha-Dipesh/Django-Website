@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %} Polls {% endblock %}
+
+{% block content %}
+    {% if question_list %}
+        <h1 class = "title">Polls</h1>
+        {% for question in question_list %}
+            <div class="container">
+                <h3>{{question.question_text}}</h3>
+                <a href="{% url 'polls:detail' question.id %}" class = "primary_button"><i class = "fas fa-person-booth"></i> Vote Now</a>
+                <a href="{% url 'polls:result' question.id %}" class = "secondary_button"><i class = "fas fa-poll"></i> Result</a>
+            </div>
+        {% endfor %}
+    {% else %}
+        <h1 class = "warning">No Polls Available</h1>
+    {% endif %}
+{% endblock %}

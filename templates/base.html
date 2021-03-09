@@ -1,0 +1,44 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %} {% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <script src="https://kit.fontawesome.com/a81368914c.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400&display=swap" rel="stylesheet">
+    <style>
+        input[type="submit"] {
+        background: none;
+        border:1px solid #2d3436;
+        color:#2d3436;
+        padding:10px 20px;
+        border-radius:5px;
+        margin-left:50%;
+        cursor: pointer;
+        transition: all .3s ease;
+        }
+        input[type="submit"]:hover {
+            box-shadow: 1px 1px 15px #2d3436;
+            transform: scale(1.1);
+        }
+        .container span {
+            background-color: #2d3436;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            border-top-left-radius: 15px;
+            border-bottom-left-radius: 0px;
+            margin-left: 5px;
+        }
+    </style>
+</head>
+<body>
+    {% block content %}
+
+    {% endblock %}
+</body>
+</html>

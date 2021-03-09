@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block title %} Result {% endblock %}
+
+{% block content %}
+    <h1 class = "title">{{ question.question_text }}</h1>
+    {% for choice in question.choice_set.all %}
+        <div class="container">
+            <p>{{ choice.choice_text }} <span>{{ choice.votes }} vote{{ choice.votes | pluralize }}</span></p>
+        </div>
+    {% endfor %}
+    <a href="{% url 'polls:index' %}" class = "primary_button"><i class = "fas fa-hand-point-left"></i> Return to Polls</a>
+{% endblock %}
